@@ -11,13 +11,14 @@ public class PoliceOfficer
 
    /*
       Constructor
-      n The officer's name.
-      bn The officer's badge number.
+      name The officer's name.
+      badgeNumber The officer's badge number.
    */
 
-   public PoliceOfficer(String n, String bn)
+   public PoliceOfficer(String name, String badgeNumber)
    {
-     
+     this.name = name;
+     this.badgeNumber = badgeNumber;
    }
 
    /*
@@ -27,26 +28,27 @@ public class PoliceOfficer
 
    public PoliceOfficer(PoliceOfficer officer2)
    {
-      
+      this.name = officer2.name;
+      this.badgeNumber = officer2.badgeNumber;
    }
    /*
       setName method
-      n The officer's name.
+      name The officer's name.
    */
 
-   public void setName(String n)
+   public void setName(String name)
    {
-      
+      this.name = name;
    }
 
    /*
       setBadgeNumber method
-      b The officer's badge number.
+      badgeNumber The officer's badge number.
    */
 
-   public void setBadgeNumber(String b)
+   public void setBadgeNumber(String badgeNubmer)
    {
-     
+      this.badgeNumber = badgeNubmer;
    }
 
    /*
@@ -56,7 +58,7 @@ public class PoliceOfficer
 
    public String getName()
    {
-      
+      return this.name;
    }
 
    /*
@@ -66,7 +68,7 @@ public class PoliceOfficer
 
    public String getBadgeNumber()
    {
-      
+      return this.badgeNumber;
    }
 
    /*
@@ -85,8 +87,15 @@ public class PoliceOfficer
    public ParkingTicket patrol(ParkedCar car,
                                ParkingMeter meter)
    {
-      
-    }
+
+      // The illegally parked time
+      int difference = car.getMinutesParked() - meter.getMinutesPurchased();
+
+      // Creating ticket
+      ParkingTicket ticket = new ParkingTicket(car, this, difference);
+
+      return ticket;
+   }
 
    /*
       toString method
@@ -96,6 +105,13 @@ public class PoliceOfficer
 
    public String toString()
    {
-      
-    }
+
+      // Formatting string for printing
+      String officer = "\nName: " + this.getName() +
+                       "\nBadge Number: " + this.getBadgeNumber() +
+                       "\n";
+
+      return officer;
+   }
+
 }

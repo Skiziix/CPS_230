@@ -10,22 +10,22 @@ public class ParkingMeter
 
    /*
       Constructor
-      m The number of minutes purchased.
+      minutes The number of minutes purchased.
    */
 
-   public ParkingMeter(int m)
+   public ParkingMeter(int minutes)
    {
-     
+      this.minutesPurchased = minutes;
    }
 
    /*
       setMinutesPurchased method
-      m The number of minutes purchased.
+      minutes The number of minutes purchased.
    */
 
-   public void setMinutesPurchased(int m)
+   public void setMinutesPurchased(int minutes)
    {
-    
+      this.minutesPurchased = minutes;
    }
 
    /*
@@ -35,6 +35,6 @@ public class ParkingMeter
 
    public int getMinutesPurchased()
    {
-     
+      return this.minutesPurchased;
    }
 }

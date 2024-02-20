@@ -8,21 +8,26 @@ public class ParkedCar
    private String make;          // The car's make
    private String model;         // The car's model
    private String color;         // The car's color
-   private String licenseNumber; // The car's licnese number
-   private int minutesParked;    // Minutes parked
+   private String license;       // The car's licnese number
+   private int minutes;          // Minutes parked
 
    /*
       Constructor
-      mk The car's make.
-      mod The car's model.
-      col The car's color.
-      lic The car's license number.
-      min The number of minutes parked.
+      make The car's make.
+      model The car's model.
+      color The car's color.
+      license The car's license number.
+      minutes The number of minutes parked.
    */
 
-   public ParkedCar(String mk, String mod, String col,
-                    String lic, int min)
+   public ParkedCar(String make, String model, String color,
+                    String license, int minutes)
    {
+      this.make = make;
+      this.model = model;
+      this.color = color;
+      this.license = license;
+      this.minutes = minutes;
    }
 
    /*
@@ -32,57 +37,61 @@ public class ParkedCar
 
    public ParkedCar(ParkedCar car2)
    {
-      
+      this.make = car2.make;
+      this.model = car2.model;
+      this.color = car2.color;
+      this.license = car2.license;
+      this.minutes = car2.minutes;
    }
 
    /*
       setMake method
-      m The car's make.
+      make The car's make.
    */
 
-   public void setMake(String m)
+   public void setMake(String make)
    {
-      
+      this.make = make;
    }
 
    /*
       setModel method
-      m The car's model.
+      model The car's model.
    */
 
-   public void setModel(String m)
+   public void setModel(String model)
    {
-     
+     this.model = model;
    }
 
    /**
       setColor method
-      c The car's color.
+      color The car's color.
    */
 
-   public void setColor(String c)
+   public void setColor(String color)
    {
-      
+      this.color = color;
    }
 
    /*
       setLicenseNumber method
-      lic The car's license number.
+      license The car's license number.
    */
 
-   public void setLicenseNumber(String lic)
+   public void setLicenseNumber(String license)
    {
-      
+      this.license = license;
    }
 
    /*
       setMinutesParked method
-      m The number of minutes parked.
+      minutes The number of minutes parked.
    */
 
-   public void setMinutesParked(int m)
+   public void setMinutesParked(int minutes)
    {
-    
+      this.minutes = minutes;
    }
 
    /*
@@ -92,7 +101,7 @@ public class ParkedCar
 
    public String getMake()
    {
-     
+      return this.make;
    }
 
    /*
@@ -102,7 +111,7 @@ public class ParkedCar
 
    public String getModel()
    {
-      
+      return this.model;
    }
 
    /*
@@ -112,7 +121,7 @@ public class ParkedCar
 
    public String getColor()
    {
-    
+      return this.color;
    }
 
    /*
@@ -122,7 +131,7 @@ public class ParkedCar
 
    public String getLicenseNumber()
    {
- 
+      return this.license;
    }
 
    /*
@@ -132,7 +141,7 @@ public class ParkedCar
 
    public int getMinutesParked()
    {
-      
+      return this.minutes;      
    }
 
    /*
@@ -143,5 +152,25 @@ public class ParkedCar
 
    public String toString()
    {
+
+      // Formatted string for printing
+      String parkedCar = "Make: " + this.getMake() + 
+                         "\nModel: " + this.getModel() +
+                         "\nColor: " + this.getColor() +
+                         "\nLicense Number: " + this.getLicenseNumber() +
+                         "\nMinutes Parked: " + this.getMinutesParked();
+
+      return parkedCar;
+   }
+
+   public String forTicket() {
+
+      // Formatted string for a ticket
+      String parkedCar = "Make: " + this.getMake() + 
+                         "\nModel: " + this.getModel() +
+                         "\nColor: " + this.getColor() +
+                         "\nLicense Number: " + this.getLicenseNumber();
+
+      return parkedCar;
    }
 }

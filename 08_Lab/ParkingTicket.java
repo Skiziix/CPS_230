@@ -3,6 +3,7 @@
    for the Parking Ticket Simulator programming challenge.
 */
 
+import java.lang.Math;
 
 public class ParkingTicket
 {
@@ -28,7 +29,11 @@ public class ParkingTicket
                         PoliceOfficer anOfficer,
                         int min)
    {
-      
+      this.car = aCar;
+      this.officer = anOfficer;
+      this.minutes = min;
+
+      this.calculateFine();
    }
 
    /*
@@ -38,8 +43,11 @@ public class ParkingTicket
 
    public ParkingTicket(ParkingTicket ticket2)
    {
-     
-    }  
+      this.car = ticket2.car;
+      this.officer = ticket2.officer;
+      this.fine = ticket2.fine;
+      this.minutes = ticket2.minutes;
+   }  
          
          
     /*
@@ -49,27 +57,32 @@ public class ParkingTicket
 
    private void calculateFine()
    {
-      
+      // Division rounding up to the nearest hour and minus one for the hourly fine
+      int hoursBilled = Math.ceilDiv(this.minutes, 60) - 1;
+
+      // The fine is equal to the base rate times hours above the first
+      this.fine = this.BASE_FINE + (this.HOURLY_FINE * hoursBilled);
+
    }
 
    /*
       setCar method
-      c A ParkedCar object.
+      aCar A ParkedCar object.
    */
 
-   public void setCar(ParkedCar c)
+   public void setCar(ParkedCar aCar)
    {
-      
+      this.car = aCar;
    }
 
    /*
       setOfficer method
-      o A PoliceOfficer object.
+      anOfficer A PoliceOfficer object.
    */
 
-   public void setOfficer(PoliceOfficer o)
+   public void setOfficer(PoliceOfficer anOfficer)
    {
-     
+      this.officer = anOfficer;
    }
 
    /*
@@ -79,7 +92,7 @@ public class ParkingTicket
 
    public ParkedCar getCar()
    {
-      
+      return this.car;
    }
 
    /*
@@ -89,7 +102,7 @@ public class ParkingTicket
 
    public double getFine()
    {
-      
+      return this.fine;
    }
 
    /*
@@ -99,7 +112,7 @@ public class ParkingTicket
 
    public PoliceOfficer getOfficer()
    {
-     
+      return this.officer;
    }
 
    /*
@@ -110,6 +123,12 @@ public class ParkingTicket
 
    public String toString()
    {
-    
+
+      // Formatted string for printing
+      String ticket = this.car.forTicket() +
+                      "\nFine Amount: " + this.getFine() +
+                      "\nPolice Officer's Badge No.: " + this.officer.getBadgeNumber();
+
+      return ticket;
    }
 }
