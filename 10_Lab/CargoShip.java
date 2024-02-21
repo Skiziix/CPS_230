@@ -32,7 +32,7 @@ class CargoShip extends Ship {
     @Override
     public String toString() {
         String cargoShip = super.toString() +
-                           "\nCargo maxTonnage: " + this.getmaxTonnage();
+                           "\nCargo Max Tonnage: " + this.getmaxTonnage();
 
         return(cargoShip);
     }
