@@ -13,6 +13,18 @@ class Ship {
         
     }
 
+
+    /**
+     * Setters
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBuildYear(String buildYear) {
+        this.buildYear = buildYear;
+    }
+
     /**
      * Getters
      */
