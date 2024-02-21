@@ -36,6 +36,9 @@ class Ship {
         return(this.buildYear);
     }
 
+    /**
+     * String representation
+     */
     public String toString() {
         String ship = "\nBuild Year: " + this.buildYear +
                       "\nName: " + this.name;
