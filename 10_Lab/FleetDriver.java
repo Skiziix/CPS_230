@@ -29,6 +29,16 @@ public class FleetDriver {
             // The input in response to the Input menu
             String shipType = JOptionPane.showInputDialog(options + "Choose One: ");
 
+            // Invalid ship
+            while (!(shipType.equals("1") || shipType.equals("2") || shipType.equals("3"))) {
+                
+                // Error Message
+                JOptionPane.showMessageDialog(null, "Error Invalid input! Enter 1, 2, or 3!", "Error", JOptionPane.ERROR_MESSAGE);
+
+                // Requesting input again
+                shipType = JOptionPane.showInputDialog(options + "Choose One: ");
+            }
+
             // Name of the ship
             String name = JOptionPane.showInputDialog("Ship name: ");
 
