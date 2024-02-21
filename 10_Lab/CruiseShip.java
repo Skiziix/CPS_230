@@ -4,9 +4,9 @@ class CruiseShip extends Ship {
 
     /**
      * Constructor
-     * @param name
-     * @param buildYear
-     * @param maxPassengers
+     * @param name the name of the ship
+     * @param buildYear the year the ship was built
+     * @param maxPassengers the maximum passengers that a cruise ship can hold
      */
 
     public CruiseShip(String name, String buildYear, int maxPassengers) {
