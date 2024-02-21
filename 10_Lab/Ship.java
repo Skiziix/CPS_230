@@ -13,6 +13,17 @@ class Ship {
         
     }
 
+    /**
+     * Getters
+     */
+    public String getName() {
+        return(this.name);
+    }
+
+    public String getBuildYear() {
+        return(this.buildYear);
+    }
+
     public String toString() {
         String ship = "\nBuild Year: " + this.buildYear +
                       "\nName: " + this.name;
