@@ -1,23 +1,23 @@
 class CargoShip extends Ship {
-    int capacity;
+    int maxTonnage;
 
-    public CargoShip(String name, String buildYear, int capacity) {
+    public CargoShip(String name, String buildYear, int maxTonnage) {
         super(name, buildYear);
-        this.capacity = capacity;
+        this.maxTonnage = maxTonnage;
     }
 
     /**
      * Setters
      */
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    public void setmaxTonnage(int maxTonnage) {
+        this.maxTonnage = maxTonnage;
     }
 
     /**
      * Getters
      */
-    public int getCapacity() {
-        return(this.capacity);
+    public int getmaxTonnage() {
+        return(this.maxTonnage);
     }
 
     /**
@@ -26,7 +26,7 @@ class CargoShip extends Ship {
     @Override
     public String toString() {
         String cargoShip = super.toString() +
-                           "\nCargo Capacity: " + this.getCapacity();
+                           "\nCargo maxTonnage: " + this.getmaxTonnage();
 
         return(cargoShip);
     }
