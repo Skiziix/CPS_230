@@ -9,7 +9,7 @@ class CargoShip extends Ship {
      */
     public CargoShip(String name, String buildYear, int maxTonnage) {
         super(name, buildYear);
-        this.maxTonnage = maxTonnage;
+        this.setmaxTonnage(maxTonnage);
     }
 
     /**
@@ -32,7 +32,7 @@ class CargoShip extends Ship {
     @Override
     public String toString() {
         String cargoShip = super.toString() +
-                           "\nCargo maxTonnage: " + this.getmaxTonnage();
+                           "\nCargo Max Tonnage: " + this.getmaxTonnage();
 
         return(cargoShip);
     }
