@@ -9,7 +9,7 @@ class CargoShip extends Ship {
      */
     public CargoShip(String name, String buildYear, int maxTonnage) {
         super(name, buildYear);
-        this.maxTonnage = maxTonnage;
+        this.setmaxTonnage(maxTonnage);
     }
 
     /**
