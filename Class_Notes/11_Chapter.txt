@@ -1,0 +1,44 @@
+(02 / 22 / 24) -
+
+    * Checked exceptions inherit from the throwable superclass
+    * Checked exceptions must me in the throws clause if a class throws an exception
+    * Random Accesss File - An array like file, allowing you to jump to any postion in the file
+    *
+
+    Pg. 748 #'s 11.20-11.25:
+
+
+
+    Pg 732 #'s 11.15-11.19:
+        
+
+    Pg. 725 #'s 11.1-11.14:
+        1.) An exception is a problem that occurs at runtime, thrown
+        by an object
+        2.) To throw an object means to alert that their was something
+        invalid tha happened and it needs to be handled
+        3.) If an exception is thrown and the program doesn't handle it,
+        then it will stop executing
+        4.) All exceptions inherit from "Throwable"
+        5.) Errors are unchecked and mean there is a larger issue that 
+        we can't handle, while an exception is checked needs to be 
+        caught and we can handle
+        6.) a try block attempts to do something and a catch block
+        runs if a certain error occurs
+        7.) It picks back up where it normally would, like an if else 
+        statement
+        8.) Use the default getMessage method
+        9.) The JVM searches the catch statements and passes the handling
+        to the first catch block that can handle it
+        10.) The code in the final block executes after the try block
+        and appropriate catch block runs
+        11.) The call stack is the "stack" of method calls. Sometimes
+        a method calls one method then another and another and so on. 
+        A stack trace just visualizes the calls and where the error 
+        occured
+        12.) The program stops running and shows method B to have been 
+        the method to throw an error
+        13.) An unchecked exception is a throwable object inheriting from
+        "Error" or "RuntimeException" while a checked exception is any other 
+        exception
+        14.) When your class throws an exception
