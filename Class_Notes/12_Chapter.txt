@@ -1,4 +1,39 @@
 (02 / 29 / 24):
 
     JavaFx - Java's GUI library
-    
+
+    Pg. 761 #'s 12.1 - 12.4:
+        1.) A user interface is something that allows an end-user
+        to interact with your application.
+        2.) A command line interface ouputs some text and asks the user
+        to enter input in response.
+        3.) The order of the program.
+        4.) An event-driven program is one who's behavior is decided
+        by user interaction (events).
+
+    Pg. 765 #'s 12.5 - 12.14:
+        5.) JavaFX is a GUI library
+        6.) A window is analogous to a stage
+        7.) A scene graph describes the connections between the base stage
+        or window, and the different scenes.
+        8.) There is the root node, branch node, and leaf node
+        9.) Root nodes and branch nodes can have children, but leaves cannot.
+        10.) Application
+        11.) The launch method opens a window for the scenes to be displayed on the GUI
+        12.) This method starts the program within the window and has to be overridden
+        13.) This sets the title of the window
+        14.) This actually displays the application's window.
+
+    Pg. 772 #'s 12.15 - 12.19:
+        15.) A HBox container aligns controls horizontally and a VBox container aligns controls vertically
+        16.) To align things in a grid you would use the grid pane container
+        17.) The scene class is in the javafx.scene package
+        18.) You can change the alignment of an HBox container by using setAlignment and some enumerated Pos
+        19.) The enumeration Pos is in the geometry package
+
+    Pg. 776 #'s 12.20 - 12.24:
+        20.) The package javafx.scene.image contains the ImageView and Image classes
+        21.) You add and ImageView object
+        22.) You use setFitWidth and setFitHeight
+        23.) use use setPreserveRatio(true)
+        24.) use setImage
