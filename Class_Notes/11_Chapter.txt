@@ -10,7 +10,15 @@
 
 
     Pg 732 #'s 11.15-11.19:
-        
+        15.) The throw statement returns an exception and must be caught
+        or the program will stop.
+        16.) The purpose is to give a more detailed error message to the user. 
+        The no arg constructor will be used and gives a more general error message.
+        17.) The "throw" statement returns an exception and the "throws" lets the compiler
+        know that the class will be returning a certain exception.
+        18.) Yes it does because it is a checked exception.
+        19.) To make sure it is checked you extend the "Exception" class, but to make 
+        sure it's unchecked you extend the "RuntimeException" class.
 
     Pg. 725 #'s 11.1-11.14:
         1.) An exception is a problem that occurs at runtime, thrown
