@@ -23,7 +23,11 @@ class Month {
 
     public int getMonthNumber() {
         return this.month.ordinal() + 1;
-    }    
+    }
+    
+    public String getMonthName() {
+        return this.month.name();
+    }
 
     public void setMonth(int monthNumber) {
         this.month = allMonths.values()[monthNumber + 1];
@@ -49,7 +53,8 @@ class Month {
     }
 
     public String toString() {
-        String monthString = "Month Name: " + this.getMonthNumber() + "\n";
+        String monthString = "Month Name: " + this.getMonthNumber() + "\n" + 
+                             "Month Name: " + this.getMonthName() + "\n";
 
         return monthString;
     }
