@@ -46,7 +46,7 @@ class Month {
     }
 
     public void setMonth(int monthNumber) {
-        this.month = allMonths.values()[monthNumber + 1];
+        this.month = allMonths.values()[monthNumber - 1];
     }
 
     public boolean equals(Month otherMonth) {
@@ -69,7 +69,7 @@ class Month {
     }
 
     public String toString() {
-        String monthString = "Month Name: " + this.getMonthNumber() + "\n" + 
+        String monthString = "Month Number: " + this.getMonthNumber() + "\n" + 
                              "Month Name: " + this.getMonthName() + "\n";
 
         return monthString;
