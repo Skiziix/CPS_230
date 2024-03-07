@@ -21,8 +21,16 @@ class Month {
     }
 
     // Fill this out
-    public Month(String monthName) {
-        this.month = allMonths.valueOf(monthName);
+    public Month(String monthName) throws InvalidMonthName{
+
+        try { 
+            this.month = allMonths.valueOf(monthName);
+        } 
+
+        catch (IllegalArgumentException e) {
+            throw new InvalidMonthName(monthName);
+        }
+
     }
 
     public int getMonthNumber() {
@@ -31,6 +39,10 @@ class Month {
     
     public String getMonthName() {
         return this.month.name();
+    }
+
+    public void setMonth(String monthName) {
+        this.month = allMonths.valueOf(monthName);
     }
 
     public void setMonth(int monthNumber) {
