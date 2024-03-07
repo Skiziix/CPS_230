@@ -9,7 +9,6 @@ public class Driver {
         do {
             String userInput = JOptionPane.showInputDialog("Enter a month name or number: ");
 
-        
             try {
                 int monthNumber = Integer.parseInt(userInput);
                 createMonth(monthNumber);
@@ -20,15 +19,13 @@ public class Driver {
 
         } while (again);
 
-
-        
     }
 
     public static void createMonth(String monthName) {
 
         try {
             month = new Month(monthName);
-            System.out.println("\n\n" + month);
+            showMonth();
                 
         } catch (InvalidMonthName e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Invalid Month Name!"
@@ -41,17 +38,16 @@ public class Driver {
 
     public static void createMonth(int monthNumber) {
 
-            try {
-                month = new Month(monthNumber);
-                System.out.println("\n\n" + month);
-
+        try {
+            month = new Month(monthNumber);
+            showMonth();;
                 
-            } catch (MonthOutOfRange e) {
-                JOptionPane.showMessageDialog(null, e.getMessage(), "Invalid Month Number!"
-                                            ,JOptionPane.ERROR_MESSAGE);
-            }
+        } catch (MonthOutOfRange e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Invalid Month Number (1-12)!"
+                                          ,JOptionPane.ERROR_MESSAGE);
+        }
 
-            askAgain();
+        askAgain();
             
     }
 
@@ -64,6 +60,9 @@ public class Driver {
                                                     
         again = (options[answer].equals("Yes")) ? true : false;
 
-    
+    }
+
+    public static void showMonth() {
+        JOptionPane.showMessageDialog(null, month, "Month Info", JOptionPane.INFORMATION_MESSAGE);
     }
 }
