@@ -37,3 +37,20 @@
         22.) You use setFitWidth and setFitHeight
         23.) use use setPreserveRatio(true)
         24.) use setImage
+
+(03 / 07 / 24): 
+
+    Pg. 792 #'s 12.25-12.28:
+        25.) Padding is the space between the inside of a component and its elements
+        26.) Insets is part of the javafx.geometry class
+        27.) You call setVgap or setHgap
+        28.) You just call the .add method
+
+    Pg. 798 #'s 12.29-12.32:
+        29.) An event is something that the user does to interact with the UI (A button click)
+        30.) An event handler is attached to control elements and does some function after an event is fired
+        31.) EventHandler comes from javafx.event
+        32.) You call setOnAction method on a button
+
+    Pg 803 #'s 12.33-12.34:
+        
