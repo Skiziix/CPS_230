@@ -46,7 +46,7 @@ class Month {
     }
 
     public void setMonth(int monthNumber) {
-        this.month = allMonths.values()[monthNumber - 1];
+        this.month = allMonths.values()[--monthNumber];
     }
 
     public boolean equals(Month otherMonth) {
