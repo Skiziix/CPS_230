@@ -12,7 +12,11 @@ class Month {
         this.setMonth(1);
     }
 
-    public Month(int month) {
+    public Month(int month) throws MonthOutOfRange {
+
+        if (month < 0 || month > 11) 
+            throw new MonthOutOfRange(month + 1);
+
         this.setMonth(month);
     }
 
