@@ -17,3 +17,7 @@ Multiple Choice & True/False:
     16.) True - (False) You cannot declare an enum type inside a method
     17.) True
     18.) True
+
+Find the Error:
+    1.) A static method cannot mutate non-static fields.
+    2.) Case statements cannot use FQNs of enums.
