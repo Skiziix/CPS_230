@@ -36,3 +36,12 @@ Algorithm Workbench:
         [c] - public boolean greaterThan(Circle circle) {
                 return this.getArea() > circle.getArea() ? True : False;
               }
+
+Short Answer:
+    1.) Access non-static members.
+    2.) They can be called without instantiating a class.
+    3.) A class object is passed by reference, while a variable is passed by value
+    4.) The automatic equals method compares the memory address that is referenced.
+    5.) It means that a class has another class as a member variable type.
+    6.) If you attempt to call a method using a reference variable set to null the program crashes.
+    7.) It's unadvisable unless it is a string object.
