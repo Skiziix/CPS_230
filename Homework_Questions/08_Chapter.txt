@@ -21,3 +21,18 @@ Multiple Choice & True/False:
 Find the Error:
     1.) A static method cannot mutate non-static fields.
     2.) Case statements cannot use FQNs of enums.
+
+Algorithm Workbench:
+    1.)
+        [a] - public String toString() {
+                String representation = "Radius: " + this.getRadius() + "\nArea: " + this.getArea();
+                return representation;
+              }
+
+        [b] - public boolean equals(Circle circle) {
+                return this.getRadius() == circle.getRadius() ? True : False;
+              }
+
+        [c] - public boolean greaterThan(Circle circle) {
+                return this.getArea() > circle.getArea() ? True : False;
+              }
