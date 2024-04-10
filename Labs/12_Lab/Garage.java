@@ -47,19 +47,26 @@ public class Garage extends Application
       taxHBox.setAlignment(Pos.CENTER_LEFT);
       
       // Create the calcButton control.
-      Button oilChangeButton = new Button("Oil Change").setOnAction(new OilChange());
-      Button lubeChangeButton = new Button("Lube Job").setOnAction(new lubeChangeButton());
-      Button radiatorFlushButton = new Button("Radiator Flush").setOnAction(new TransmissionFlush());
-      Button transmissionFlushButton = new Button("Transmission Fluid").setOnAction(new TransmissionFlush());
-      Button inspectionButton = new Button("Inspection").setOnAction(new Inspection());
-      HBox buttonHBox = new HBox(oilChangeButton);
+      Button oilChangeButton = new Button("Oil Change");
+      Button lubeChangeButton = new Button("Lube Job");
+      Button radiatorFlushButton = new Button("Radiator Flush");
+      Button transmissionFlushButton = new Button("Transmission Fluid");
+      Button inspectionButton = new Button("Inspection");
+      Button mufflerReplacementButton = new Button("Muffler Replacement");
+      Button tireRotationButton = new Button("Tire Rotation");
+      HBox buttonHBox = new HBox(oilChangeButton, lubeChangeButton, radiatorFlushButton,
+                                transmissionFlushButton, inspectionButton, mufflerReplacementButton,
+                                tireRotationButton);
       buttonHBox.setAlignment(Pos.CENTER);
       
       //  Create your button Handlers Here!!
-      calcButton.setOnAction(new OilChange());
-      
-      
-      
+      oilChangeButton.setOnAction(new OilChange());
+      lubeChangeButton.setOnAction(new LubeJob());
+      radiatorFlushButton.setOnAction(new RadiatorFlush());
+      transmissionFlushButton.setOnAction(new TransmissionFlush());
+      inspectionButton.setOnAction(new Inspection());
+      mufflerReplacementButton.setOnAction(new MufflerReplacement());
+      tireRotationButton.setOnAction(new TireRotation());
       
            
       // Put everything into a VBox
@@ -95,6 +102,7 @@ public class Garage extends Application
         @Override
         public void handle(ActionEvent event) {
             changeTotal(25);
+            System.out.println(total);
         }
 
     }
@@ -104,6 +112,7 @@ public class Garage extends Application
         @Override
         public void handle(ActionEvent event) {
             changeTotal(50);
+            System.out.println(total);
         }
 
    }
@@ -113,6 +122,7 @@ public class Garage extends Application
         @Override
         public void handle(ActionEvent event) {
             changeTotal(120);
+            System.out.println(total);
         }
 
     }
@@ -122,6 +132,7 @@ public class Garage extends Application
         @Override
         public void handle(ActionEvent event) {
             changeTotal(35);
+            System.out.println(total);
         }
 
    }
@@ -131,6 +142,7 @@ public class Garage extends Application
         @Override
         public void handle(ActionEvent event) {
             changeTotal(200);
+            System.out.println(total);
         }
 
     }
@@ -140,6 +152,7 @@ public class Garage extends Application
         @Override
         public void handle(ActionEvent event) {
             changeTotal(20);
+            System.out.println(total);
         }
 
    }
@@ -149,6 +162,7 @@ public class Garage extends Application
         @Override
         public void handle(ActionEvent event) {
             changeTotal(60 * 2);
+            System.out.println(total);
         }
 
     }
