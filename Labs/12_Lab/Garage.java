@@ -54,10 +54,10 @@ public class Garage extends Application
       Button inspectionButton = new Button("Inspection");
       Button mufflerReplacementButton = new Button("Muffler Replacement");
       Button tireRotationButton = new Button("Tire Rotation");
-      HBox buttonHBox = new HBox(oilChangeButton, lubeChangeButton, radiatorFlushButton,
+      VBox buttonVBox = new VBox(oilChangeButton, lubeChangeButton, radiatorFlushButton,
                                 transmissionFlushButton, inspectionButton, mufflerReplacementButton,
                                 tireRotationButton);
-      buttonHBox.setAlignment(Pos.CENTER);
+      buttonVBox.setAlignment(Pos.CENTER);
       
       //  Create your button Handlers Here!!
       oilChangeButton.setOnAction(new OilChange());
@@ -71,7 +71,7 @@ public class Garage extends Application
            
       // Put everything into a VBox
       VBox mainVBox = new VBox(10, avHBox, assessmentHBox,
-                                   taxHBox, buttonHBox);
+                                   taxHBox, buttonVBox);
       mainVBox.setAlignment(Pos.CENTER);
       mainVBox.setPadding(new Insets(10));
       
