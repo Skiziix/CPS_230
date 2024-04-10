@@ -57,7 +57,7 @@ public class Garage extends Application
       VBox buttonVBox = new VBox(oilChangeButton, lubeChangeButton, radiatorFlushButton,
                                 transmissionFlushButton, inspectionButton, mufflerReplacementButton,
                                 tireRotationButton);
-      buttonVBox.setAlignment(Pos.CENTER);
+      buttonVBox.setAlignment(Pos.CENTER_LEFT);
       
       //  Create your button Handlers Here!!
       oilChangeButton.setOnAction(new OilChange());
