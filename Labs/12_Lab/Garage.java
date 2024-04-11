@@ -35,7 +35,7 @@ public class Garage extends Application
       avHBox.setAlignment(Pos.CENTER);
       
       // Create the assessment value output labels.
-      Label assessmentDescriptor = new Label("Assessment value:");
+      Label assessmentDescriptor = new Label("Total:");
       Label assessmentOutputLabel = new Label();
       HBox assessmentHBox = new HBox(10, assessmentDescriptor, assessmentOutputLabel);
       assessmentHBox.setAlignment(Pos.CENTER_LEFT);
@@ -87,6 +87,10 @@ public class Garage extends Application
 
    public void changeTotal(double add) {
         this.total = this.total + add;
+   }
+
+   public double getTotal() {
+        return this.total;
    }
 
    class OilChange implements EventHandler<ActionEvent> {
