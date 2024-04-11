@@ -69,7 +69,7 @@ public class MetricConverter extends Application
             resultLabelMile.setText("Miles: " + String.format("%,.2f", miles));
             resultLabelFeet.setText("Feet: " + String.format("%.2f", feet));
             resultLabelInch.setText("Inches: " + String.format("%.2f", inches));
-            resultLabelInch.setText("Kilometers: " + String.format("%.2f", kilometers));
+            resultLabelKilometer.setText("Kilometers: " + String.format("%.2f", kilometers));
         }
       );
 
