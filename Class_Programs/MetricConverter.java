@@ -81,6 +81,8 @@ public class MetricConverter extends Application
       resultLabelFeet = new Label();
       resultLabelInch = new Label();
       resultLabelKilometer = new Label();
+
+      VBox results = new VBox(5, resultLabelMile, resultLabelFeet, resultLabelInch, resultLabelKilometer);
       
       // Put the promptLabel and the kiloTextField in an HBox.
       HBox promptHBox = new HBox(10, promptLabel, kiloTextField);
