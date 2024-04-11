@@ -1,3 +1,5 @@
+import javax.swing.text.Position;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -48,10 +50,11 @@ public class MetricConverter extends Application
       inchesButton = new RadioButton("Convert to Inches");
 
       // Create an empty Label to display the result.
-      Label resultLabelMile = new Label();
-      Label resultLabelFeet = new Label();
-      Label resultLabelInch = new Label();
-      Label resultLabelKilometer = new Label();
+      Label resultLabelMile = new Label("Miles: 0.0");
+      Label resultLabelFeet = new Label("Feet: 0.0");
+      Label resultLabelInch = new Label("Inches: 0.0");
+      Label resultLabelKilometer = new Label("Kilometers: 0.0");
+
 
       // Create the slider control.
       Slider kiloSlider = new Slider(0.0, 50.0, 0.0);
@@ -63,10 +66,10 @@ public class MetricConverter extends Application
             double feet = kilometers * 3281.0;
             double inches = kilometers * 39370.0;
 
-            resultLabelMile.setText(String.format("%,.2f", miles));
-            resultLabelFeet.setText(String.format("%.2f", feet));
-            resultLabelInch.setText(String.format("%.2f", inches));
-            resultLabelInch.setText(String.format("%.2f", kilometers));
+            resultLabelMile.setText("Miles: " + String.format("%,.2f", miles));
+            resultLabelFeet.setText("Feet: " + String.format("%.2f", feet));
+            resultLabelInch.setText("Inches: " + String.format("%.2f", inches));
+            resultLabelInch.setText("Kilometers: " + String.format("%.2f", kilometers));
         }
       );
 
@@ -86,7 +89,8 @@ public class MetricConverter extends Application
       calcButton.setOnAction(new CalcButtonHandler());
 
       VBox results = new VBox(5, resultLabelMile, resultLabelFeet, resultLabelInch, resultLabelKilometer);
-      
+      results.setAlignment(Pos.CENTER);
+
       // Put the promptLabel and the kiloTextField in an HBox.
       HBox promptHBox = new HBox(10, promptLabel, kiloTextField);
       
