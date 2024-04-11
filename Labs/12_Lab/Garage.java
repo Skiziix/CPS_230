@@ -32,9 +32,8 @@ public class Garage extends Application
       
       
       // Create the assessment value output labels.
-      Label assessmentDescriptor = new Label("Total: " + this.getTotal());
-      Label assessmentOutputLabel = new Label();
-      HBox assessmentHBox = new HBox(10, assessmentDescriptor, assessmentOutputLabel);
+      Label totalDisplay = new Label("Total: " + this.getTotal());
+      HBox assessmentHBox = new HBox(10, totalDisplay);
       assessmentHBox.setAlignment(Pos.CENTER_LEFT);
       
       
@@ -62,7 +61,7 @@ public class Garage extends Application
       buttonVBox.setAlignment(Pos.CENTER_LEFT);
 
       // Change total function for easily readable lambdas.
-      ChangeTotalLabel setText = new ChangeTotalLabel(assessmentDescriptor);
+      ChangeTotalLabel setText = new ChangeTotalLabel(totalDisplay);
       
       // Button handlers, implemented as lambda functions.
       oilChangeButton.setOnAction(event -> {changeTotal(35); setText.changeText();});
@@ -93,14 +92,17 @@ public class Garage extends Application
 
    }
 
+   // To change the total
    public void changeTotal(double add) {
         this.total = this.total + add;
    }
 
+   // To get the total
    public double getTotal() {
         return this.total;
    }
 
+   // To submit miscelaneous time
    public void miscTime(TextField input) {
         try {
             this.changeTotal(Double.parseDouble(input.getText()) * 60);
@@ -111,6 +113,7 @@ public class Garage extends Application
         }
    }
 
+   // Changes total display
    public class ChangeTotalLabel {
         private Label totalLabel;
 
