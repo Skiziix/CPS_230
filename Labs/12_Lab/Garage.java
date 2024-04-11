@@ -29,10 +29,7 @@ public class Garage extends Application
    public void start(Stage primaryStage)
    {
       // Create the controls for the actual value.
-      Label avPrompt = new Label("Misc. Time");
-      TextField avTextField = new TextField();
-      HBox avHBox = new HBox(10, avPrompt, avTextField);
-      avHBox.setAlignment(Pos.CENTER_LEFT);
+      
       
       // Create the assessment value output labels.
       Label assessmentDescriptor = new Label("Total: " + this.getTotal());
@@ -41,7 +38,9 @@ public class Garage extends Application
       assessmentHBox.setAlignment(Pos.CENTER_LEFT);
       
       
-      // Create the calcButton control.
+      // Create the inputs //
+
+      // These are all buttons
       Button oilChangeButton = new Button("Oil Change");
       Button lubeChangeButton = new Button("Lube Job");
       Button radiatorFlushButton = new Button("Radiator Flush");
@@ -49,6 +48,14 @@ public class Garage extends Application
       Button inspectionButton = new Button("Inspection");
       Button mufflerReplacementButton = new Button("Muffler Replacement");
       Button tireRotationButton = new Button("Tire Rotation");
+
+      // These are button and text field pair
+      Button avPrompt = new Button("Submit Misc. Time");
+      TextField avTextField = new TextField();
+      HBox avHBox = new HBox(10, avPrompt, avTextField);
+      avHBox.setAlignment(Pos.CENTER_LEFT);
+
+
       VBox buttonVBox = new VBox(10, oilChangeButton, lubeChangeButton, radiatorFlushButton,
                                 transmissionFlushButton, inspectionButton, mufflerReplacementButton,
                                 tireRotationButton, avHBox);
@@ -65,6 +72,7 @@ public class Garage extends Application
       inspectionButton.setOnAction(event -> {changeTotal(35); setText.changeText();});
       mufflerReplacementButton.setOnAction(event -> {changeTotal(200); setText.changeText();});
       tireRotationButton.setOnAction(event -> {changeTotal(20); setText.changeText();});
+      avPrompt.setOnAction(event -> {miscTime(avTextField); setText.changeText();});
 
            
       // Put everything into a VBox
@@ -93,6 +101,10 @@ public class Garage extends Application
         return this.total;
    }
 
+   public void miscTime(TextField input) {
+        this.changeTotal(Double.parseDouble(input.getText()) * 60);
+   }
+
    public class ChangeTotalLabel {
         private Label totalLabel;
 
@@ -104,4 +116,5 @@ public class Garage extends Application
             this.totalLabel.setText("Total: " + getTotal());
         }
    }
+
 }
