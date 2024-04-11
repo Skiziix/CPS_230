@@ -45,6 +45,9 @@ public class MetricConverter extends Application
       milesButton = new RadioButton("Convert to Miles");
       feetButton = new RadioButton("Convert to Feet");
       inchesButton = new RadioButton("Convert to Inches");
+
+      // Create the slider control.
+      Slider kiloSlider = new Slider(0.0, 50.0, 0.0);
       
       // Select the milesButton control.
       milesButton.setSelected(true);
