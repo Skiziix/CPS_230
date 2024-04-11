@@ -77,10 +77,10 @@ public class MetricConverter extends Application
       calcButton.setOnAction(new CalcButtonHandler());
             
       // Create an empty Label to display the result.
-      resultLabelMile = new Label();
-      resultLabelFeet = new Label();
-      resultLabelInch = new Label();
-      resultLabelKilometer = new Label();
+      Label resultLabelMile = new Label();
+      Label resultLabelFeet = new Label();
+      Label resultLabelInch = new Label();
+      Label resultLabelKilometer = new Label();
 
       VBox results = new VBox(5, resultLabelMile, resultLabelFeet, resultLabelInch, resultLabelKilometer);
       
@@ -95,8 +95,7 @@ public class MetricConverter extends Application
       sliderHBox.setAlignment(Pos.CENTER);
       
       // Put everything in a VBox.
-      VBox mainVBox = new VBox(10, promptHBox, radioHBox, sliderHBox, calcButton,
-                               resultLabel);
+      VBox mainVBox = new VBox(10, results, sliderHBox, calcButton);
       
       // Set the VBox's alignment to center.
       mainVBox.setAlignment(Pos.CENTER);
