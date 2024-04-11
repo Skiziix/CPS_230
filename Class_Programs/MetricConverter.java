@@ -49,6 +49,7 @@ public class MetricConverter extends Application
 
       // Create the slider control.
       Slider kiloSlider = new Slider(0.0, 50.0, 0.0);
+
       // Select the milesButton control.
       milesButton.setSelected(true);
       
@@ -73,9 +74,12 @@ public class MetricConverter extends Application
       // Put the RadioButtons in an HBox.
       HBox radioHBox = new HBox(20, milesButton, feetButton,
                                 inchesButton);
+
+      HBox sliderHBox = new HBox(20, kiloSlider);
+      sliderHBox.setAlignment(Pos.CENTER);
       
       // Put everything in a VBox.
-      VBox mainVBox = new VBox(10, promptHBox, radioHBox, calcButton,
+      VBox mainVBox = new VBox(10, promptHBox, radioHBox, sliderHBox, calcButton,
                                resultLabel);
       
       // Set the VBox's alignment to center.
