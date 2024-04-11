@@ -12,6 +12,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Slider;
 
 /**
  *  Metric Converter application
@@ -48,7 +49,6 @@ public class MetricConverter extends Application
 
       // Create the slider control.
       Slider kiloSlider = new Slider(0.0, 50.0, 0.0);
-      
       // Select the milesButton control.
       milesButton.setSelected(true);
       
