@@ -102,7 +102,13 @@ public class Garage extends Application
    }
 
    public void miscTime(TextField input) {
-        this.changeTotal(Double.parseDouble(input.getText()) * 60);
+        try {
+            this.changeTotal(Double.parseDouble(input.getText()) * 60);
+        } 
+        
+        catch (NumberFormatException e) {
+            input.setText("Enter a number!");
+        }
    }
 
    public class ChangeTotalLabel {
