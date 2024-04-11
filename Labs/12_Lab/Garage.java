@@ -53,15 +53,18 @@ public class Garage extends Application
                                 transmissionFlushButton, inspectionButton, mufflerReplacementButton,
                                 tireRotationButton, avHBox);
       buttonVBox.setAlignment(Pos.CENTER_LEFT);
+
+      // Change total function for easily readable lambdas.
+      ChangeTotalLabel setText = new ChangeTotalLabel(assessmentDescriptor);
       
       // Button handlers, implemented as lambda functions.
-      oilChangeButton.setOnAction(event -> {changeTotal(35); assessmentDescriptor.setText("Total: " + getTotal());});
-      lubeChangeButton.setOnAction(event -> {changeTotal(25); assessmentDescriptor.setText("Total: " + getTotal());});
-      radiatorFlushButton.setOnAction(event -> {changeTotal(50); assessmentDescriptor.setText("Total: " + getTotal());});
-      transmissionFlushButton.setOnAction(event -> {changeTotal(120); assessmentDescriptor.setText("Total: " + getTotal());});
-      inspectionButton.setOnAction(event -> {changeTotal(35); assessmentDescriptor.setText("Total: " + getTotal());});
-      mufflerReplacementButton.setOnAction(event -> {changeTotal(200); assessmentDescriptor.setText("Total: " + getTotal());});
-      tireRotationButton.setOnAction(event -> {changeTotal(20); assessmentDescriptor.setText("Total: " + getTotal());});
+      oilChangeButton.setOnAction(event -> {changeTotal(35); setText.changeText();});
+      lubeChangeButton.setOnAction(event -> {changeTotal(25); setText.changeText();});
+      radiatorFlushButton.setOnAction(event -> {changeTotal(50); setText.changeText();});
+      transmissionFlushButton.setOnAction(event -> {changeTotal(120); setText.changeText();});
+      inspectionButton.setOnAction(event -> {changeTotal(35); setText.changeText();});
+      mufflerReplacementButton.setOnAction(event -> {changeTotal(200); setText.changeText();});
+      tireRotationButton.setOnAction(event -> {changeTotal(20); setText.changeText();});
 
            
       // Put everything into a VBox
@@ -78,6 +81,8 @@ public class Garage extends Application
       primaryStage.setResizable(false);
       primaryStage.show();
 
+
+
    }
 
    public void changeTotal(double add) {
@@ -86,5 +91,17 @@ public class Garage extends Application
 
    public double getTotal() {
         return this.total;
+   }
+
+   public class ChangeTotalLabel {
+        private Label totalLabel;
+
+        ChangeTotalLabel(Label totalLabel) {
+            this.totalLabel = totalLabel;
+        }
+
+        public void changeText() {
+            this.totalLabel.setText("Total: " + getTotal());
+        }
    }
 }
