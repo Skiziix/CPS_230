@@ -54,7 +54,7 @@ public class Garage extends Application
       Button inspectionButton = new Button("Inspection");
       Button mufflerReplacementButton = new Button("Muffler Replacement");
       Button tireRotationButton = new Button("Tire Rotation");
-      VBox buttonVBox = new VBox(oilChangeButton, lubeChangeButton, radiatorFlushButton,
+      VBox buttonVBox = new VBox(10, oilChangeButton, lubeChangeButton, radiatorFlushButton,
                                 transmissionFlushButton, inspectionButton, mufflerReplacementButton,
                                 tireRotationButton);
       buttonVBox.setAlignment(Pos.CENTER_LEFT);
@@ -76,10 +76,12 @@ public class Garage extends Application
       mainVBox.setPadding(new Insets(10));
       
       // Add the main VBox to a scene.
-      Scene scene = new Scene(mainVBox);
+      Scene scene = new Scene(mainVBox, 250, 500);
+      //scene.setResizable(false);
       
       // Set the scene to the stage aand display it.
       primaryStage.setScene(scene);
+      primaryStage.setResizable(false);
       primaryStage.show();
    }
 
