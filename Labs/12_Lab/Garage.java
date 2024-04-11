@@ -35,16 +35,11 @@ public class Garage extends Application
       avHBox.setAlignment(Pos.CENTER);
       
       // Create the assessment value output labels.
-      Label assessmentDescriptor = new Label("Total:");
+      Label assessmentDescriptor = new Label("Total: " + this.getTotal());
       Label assessmentOutputLabel = new Label();
       HBox assessmentHBox = new HBox(10, assessmentDescriptor, assessmentOutputLabel);
       assessmentHBox.setAlignment(Pos.CENTER_LEFT);
       
-      // Create the property tax output labels.
-      Label taxDescriptor = new Label("Property tax:");
-      Label taxOutputLabel = new Label();
-      HBox taxHBox = new HBox(10, taxDescriptor, taxOutputLabel);
-      taxHBox.setAlignment(Pos.CENTER_LEFT);
       
       // Create the calcButton control.
       Button oilChangeButton = new Button("Oil Change");
@@ -60,14 +55,14 @@ public class Garage extends Application
       buttonVBox.setAlignment(Pos.CENTER_LEFT);
       
       //  Create your button Handlers Here!!
-      oilChangeButton.setOnAction(new OilChange());
-      lubeChangeButton.setOnAction(new LubeJob());
-      radiatorFlushButton.setOnAction(new RadiatorFlush());
-      transmissionFlushButton.setOnAction(new TransmissionFlush());
-      inspectionButton.setOnAction(new Inspection());
-      mufflerReplacementButton.setOnAction(new MufflerReplacement());
-      tireRotationButton.setOnAction(new TireRotation());
-      
+      oilChangeButton.setOnAction(event -> {changeTotal(35); assessmentDescriptor.setText("Total: " + getTotal());});
+      lubeChangeButton.setOnAction(event -> {changeTotal(25); assessmentDescriptor.setText("Total: " + getTotal());});
+      radiatorFlushButton.setOnAction(event -> {changeTotal(50); assessmentDescriptor.setText("Total: " + getTotal());});
+      transmissionFlushButton.setOnAction(event -> {changeTotal(120); assessmentDescriptor.setText("Total: " + getTotal());});
+      inspectionButton.setOnAction(event -> {changeTotal(35); assessmentDescriptor.setText("Total: " + getTotal());});
+      mufflerReplacementButton.setOnAction(event -> {changeTotal(200); assessmentDescriptor.setText("Total: " + getTotal());});
+      tireRotationButton.setOnAction(event -> {changeTotal(20); assessmentDescriptor.setText("Total: " + getTotal());});
+
            
       // Put everything into a VBox
       VBox mainVBox = new VBox(10, buttonVBox, avHBox, assessmentHBox,
@@ -83,6 +78,14 @@ public class Garage extends Application
       primaryStage.setScene(scene);
       primaryStage.setResizable(false);
       primaryStage.show();
+
+      class SetTotal implements EventHandler<ActionEvent> {
+
+        @Override
+        public void handle(ActionEvent event) {
+            assessmentDescriptor.setText("Total: " + getTotal());
+        }
+      }
    }
 
    public void changeTotal(double add) {
