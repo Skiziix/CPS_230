@@ -29,10 +29,10 @@ public class Garage extends Application
    public void start(Stage primaryStage)
    {
       // Create the controls for the actual value.
-      Label avPrompt = new Label("Actual Value:");
+      Label avPrompt = new Label("Misc. Time");
       TextField avTextField = new TextField();
       HBox avHBox = new HBox(10, avPrompt, avTextField);
-      avHBox.setAlignment(Pos.CENTER);
+      avHBox.setAlignment(Pos.CENTER_LEFT);
       
       // Create the assessment value output labels.
       Label assessmentDescriptor = new Label("Total: " + this.getTotal());
@@ -51,10 +51,10 @@ public class Garage extends Application
       Button tireRotationButton = new Button("Tire Rotation");
       VBox buttonVBox = new VBox(10, oilChangeButton, lubeChangeButton, radiatorFlushButton,
                                 transmissionFlushButton, inspectionButton, mufflerReplacementButton,
-                                tireRotationButton);
+                                tireRotationButton, avHBox);
       buttonVBox.setAlignment(Pos.CENTER_LEFT);
       
-      //  Create your button Handlers Here!!
+      // Button handlers, implemented as lambda functions.
       oilChangeButton.setOnAction(event -> {changeTotal(35); assessmentDescriptor.setText("Total: " + getTotal());});
       lubeChangeButton.setOnAction(event -> {changeTotal(25); assessmentDescriptor.setText("Total: " + getTotal());});
       radiatorFlushButton.setOnAction(event -> {changeTotal(50); assessmentDescriptor.setText("Total: " + getTotal());});
@@ -70,7 +70,7 @@ public class Garage extends Application
       mainVBox.setPadding(new Insets(10));
       
       // Add the main VBox to a scene.
-      Scene scene = new Scene(mainVBox, 250, 500);
+      Scene scene = new Scene(mainVBox, 350, 500);
       //scene.setResizable(false);
       
       // Set the scene to the stage aand display it.
