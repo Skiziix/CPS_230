@@ -70,8 +70,8 @@ public class Garage extends Application
       
            
       // Put everything into a VBox
-      VBox mainVBox = new VBox(10, avHBox, assessmentHBox,
-                                   taxHBox, buttonVBox);
+      VBox mainVBox = new VBox(10, buttonVBox, avHBox, assessmentHBox,
+                                   taxHBox);
       mainVBox.setAlignment(Pos.CENTER);
       mainVBox.setPadding(new Insets(10));
       
