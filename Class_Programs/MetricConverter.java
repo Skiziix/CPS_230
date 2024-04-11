@@ -47,6 +47,12 @@ public class MetricConverter extends Application
       feetButton = new RadioButton("Convert to Feet");
       inchesButton = new RadioButton("Convert to Inches");
 
+      // Create an empty Label to display the result.
+      Label resultLabelMile = new Label();
+      Label resultLabelFeet = new Label();
+      Label resultLabelInch = new Label();
+      Label resultLabelKilometer = new Label();
+
       // Create the slider control.
       Slider kiloSlider = new Slider(0.0, 50.0, 0.0);
       kiloSlider.valueProperty().addListener(
@@ -57,7 +63,10 @@ public class MetricConverter extends Application
             double feet = kilometers * 3281.0;
             double inches = kilometers * 39370.0;
 
-            resultLabel.setText(String.format("%,.2f", miles));
+            resultLabelMile.setText(String.format("%,.2f", miles));
+            resultLabelFeet.setText(String.format("%.2f", feet));
+            resultLabelInch.setText(String.format("%.2f", inches));
+            resultLabelInch.setText(String.format("%.2f", kilometers));
         }
       );
 
@@ -75,12 +84,6 @@ public class MetricConverter extends Application
       
       // Register the event handler.
       calcButton.setOnAction(new CalcButtonHandler());
-            
-      // Create an empty Label to display the result.
-      Label resultLabelMile = new Label();
-      Label resultLabelFeet = new Label();
-      Label resultLabelInch = new Label();
-      Label resultLabelKilometer = new Label();
 
       VBox results = new VBox(5, resultLabelMile, resultLabelFeet, resultLabelInch, resultLabelKilometer);
       
