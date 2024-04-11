@@ -51,7 +51,13 @@ public class MetricConverter extends Application
       Slider kiloSlider = new Slider(0.0, 50.0, 0.0);
       kiloSlider.valueProperty().addListener(
         (observable, oldvalue, newvalue) -> {
-            System.out.println("Hello");
+            double kilometers = kiloSlider.getValue();
+
+            double miles = kilometers * 0.6214;
+            double feet = kilometers * 3281.0;
+            double inches = kilometers * 39370.0;
+
+            resultLabel.setText(String.format("%,.2f", miles));
         }
       );
 
