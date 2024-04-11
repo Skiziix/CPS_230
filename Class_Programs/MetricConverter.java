@@ -77,7 +77,10 @@ public class MetricConverter extends Application
       calcButton.setOnAction(new CalcButtonHandler());
             
       // Create an empty Label to display the result.
-      resultLabel = new Label();
+      resultLabelMile = new Label();
+      resultLabelFeet = new Label();
+      resultLabelInch = new Label();
+      resultLabelKilometer = new Label();
       
       // Put the promptLabel and the kiloTextField in an HBox.
       HBox promptHBox = new HBox(10, promptLabel, kiloTextField);
