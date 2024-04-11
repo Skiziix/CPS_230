@@ -49,6 +49,11 @@ public class MetricConverter extends Application
 
       // Create the slider control.
       Slider kiloSlider = new Slider(0.0, 50.0, 0.0);
+      kiloSlider.valueProperty().addListener(
+        (observable, oldvalue, newvalue) -> {
+            System.out.println("Hello");
+        }
+      );
 
       // Select the milesButton control.
       milesButton.setSelected(true);
