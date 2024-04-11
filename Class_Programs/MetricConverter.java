@@ -38,17 +38,6 @@ public class MetricConverter extends Application
    @Override
    public void start(Stage primaryStage)
    {
-      // Create a Label to display a prompt.
-      Label promptLabel = new Label("Enter a distance in kilometers:");
-      
-      // Create a TextField for input.
-      kiloTextField = new TextField();
-      
-      // Create the RadioButton controls.
-      milesButton = new RadioButton("Convert to Miles");
-      feetButton = new RadioButton("Convert to Feet");
-      inchesButton = new RadioButton("Convert to Inches");
-
       // Create an empty Label to display the result.
       Label resultLabelMile = new Label("Miles: 0.0");
       Label resultLabelFeet = new Label("Feet: 0.0");
@@ -73,36 +62,15 @@ public class MetricConverter extends Application
         }
       );
 
-      // Select the milesButton control.
-      milesButton.setSelected(true);
-      
-      // Add the RadioButton controls to a ToggleGroup.
-      ToggleGroup radioGroup = new ToggleGroup();
-      milesButton.setToggleGroup(radioGroup);
-      feetButton.setToggleGroup(radioGroup);
-      inchesButton.setToggleGroup(radioGroup);
-      
-      // Create a Button to perform the conversion.
-      Button calcButton = new Button("Convert");
-      
-      // Register the event handler.
-      calcButton.setOnAction(new CalcButtonHandler());
-
+    
       VBox results = new VBox(5, resultLabelMile, resultLabelFeet, resultLabelInch, resultLabelKilometer);
       results.setAlignment(Pos.CENTER);
-
-      // Put the promptLabel and the kiloTextField in an HBox.
-      HBox promptHBox = new HBox(10, promptLabel, kiloTextField);
-      
-      // Put the RadioButtons in an HBox.
-      HBox radioHBox = new HBox(20, milesButton, feetButton,
-                                inchesButton);
 
       HBox sliderHBox = new HBox(20, kiloSlider);
       sliderHBox.setAlignment(Pos.CENTER);
       
       // Put everything in a VBox.
-      VBox mainVBox = new VBox(10, results, sliderHBox, calcButton);
+      VBox mainVBox = new VBox(10, results, sliderHBox);
       
       // Set the VBox's alignment to center.
       mainVBox.setAlignment(Pos.CENTER);
@@ -121,40 +89,5 @@ public class MetricConverter extends Application
       
       // Show the window.
       primaryStage.show();   
-   }
-   
-   /*
-    * Event handler class for calcButton
-    */
-    
-   class CalcButtonHandler implements EventHandler<ActionEvent>
-   {
-      @Override
-      public void handle(ActionEvent event)
-      {
-         // Constants for the conversion factors.
-         final double MILES_CONVERSION = 0.6214;
-         final double FEET_CONVERSION = 3281.0;
-         final double INCHES_CONVERSION = 39370.0;
-         
-         // Variable to hold the result
-         double result = 0;
-         
-         // Get the kilometers.
-         double kilometers = Double.parseDouble(kiloTextField.getText());
-         
-         // Perform the selected conversion.
-         if (milesButton.isSelected())
-            result = kilometers * MILES_CONVERSION;
-         
-         if (feetButton.isSelected())
-            result = kilometers * FEET_CONVERSION;
-         
-         if (inchesButton.isSelected())
-            result = kilometers * INCHES_CONVERSION;
-         
-         // Display the results.
-         resultLabel.setText(String.format("%,.2f", result));
-      }
    }
 }
