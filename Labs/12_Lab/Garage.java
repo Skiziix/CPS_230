@@ -65,8 +65,7 @@ public class Garage extends Application
 
            
       // Put everything into a VBox
-      VBox mainVBox = new VBox(10, buttonVBox, avHBox, assessmentHBox,
-                                   taxHBox);
+      VBox mainVBox = new VBox(10, buttonVBox, avHBox, assessmentHBox);
       mainVBox.setAlignment(Pos.CENTER);
       mainVBox.setPadding(new Insets(10));
       
@@ -79,13 +78,6 @@ public class Garage extends Application
       primaryStage.setResizable(false);
       primaryStage.show();
 
-      class SetTotal implements EventHandler<ActionEvent> {
-
-        @Override
-        public void handle(ActionEvent event) {
-            assessmentDescriptor.setText("Total: " + getTotal());
-        }
-      }
    }
 
    public void changeTotal(double add) {
@@ -95,84 +87,4 @@ public class Garage extends Application
    public double getTotal() {
         return this.total;
    }
-
-   class OilChange implements EventHandler<ActionEvent> {
-
-        @Override
-        public void handle(ActionEvent event) {
-            changeTotal(35);
-            System.out.println(total);
-        }
-
-   }
-
-   class LubeJob implements EventHandler<ActionEvent> {
-
-        @Override
-        public void handle(ActionEvent event) {
-            changeTotal(25);
-            System.out.println(total);
-        }
-
-    }
-
-    class RadiatorFlush implements EventHandler<ActionEvent> {
-
-        @Override
-        public void handle(ActionEvent event) {
-            changeTotal(50);
-            System.out.println(total);
-        }
-
-   }
-
-   class TransmissionFlush implements EventHandler<ActionEvent> {
-
-        @Override
-        public void handle(ActionEvent event) {
-            changeTotal(120);
-            System.out.println(total);
-        }
-
-    }
-
-    class Inspection implements EventHandler<ActionEvent> {
-
-        @Override
-        public void handle(ActionEvent event) {
-            changeTotal(35);
-            System.out.println(total);
-        }
-
-   }
-
-   class MufflerReplacement implements EventHandler<ActionEvent> {
-
-        @Override
-        public void handle(ActionEvent event) {
-            changeTotal(200);
-            System.out.println(total);
-        }
-
-    }
-
-    class TireRotation implements EventHandler<ActionEvent> {
-
-        @Override
-        public void handle(ActionEvent event) {
-            changeTotal(20);
-            System.out.println(total);
-        }
-
-   }
-   
-   class LaborTime implements EventHandler<ActionEvent> {
-
-        @Override
-        public void handle(ActionEvent event) {
-            changeTotal(60 * 2);
-            System.out.println(total);
-        }
-
-    }
 }
